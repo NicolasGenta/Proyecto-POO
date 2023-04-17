@@ -1,0 +1,15 @@
+"use strict";
+exports.__esModule = true;
+var multiplesLineas_1 = require("./multiplesLineas");
+var multiplicador_1 = require("./multiplicador");
+var casino_1 = require("./casino");
+var bingo_1 = require("./bingo");
+var multiplicador = new multiplicador_1.Multiplicador();
+var multiplesLineas = new multiplesLineas_1.MultiplesLineas();
+var casino = new casino_1.Casino();
+// multiplicador.setAgregarCredito(0);
+// multiplicador.setApuesta(0);
+// multiplicador.jugar();
+// multiplicador.iniciar();
+var bingo1 = new bingo_1.Bingo();
+console.log(bingo1.jugada);
