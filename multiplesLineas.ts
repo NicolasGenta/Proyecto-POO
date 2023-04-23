@@ -1,10 +1,10 @@
 import { TragaMoneda } from "./tragaMoneda";
 export class MultiplesLineas extends TragaMoneda{
     protected nombre: string;
-    private cantidad:number;
-    public apuesta:number;
+    protected cantidad:number;
+    protected apuesta:number;
     constructor(nombre:string,cantidad:number,apuesta:number){
-        super();
+        super(nombre,cantidad,apuesta);
         this.nombre= nombre;
         this.cantidad=cantidad;
         this.apuesta=apuesta;
@@ -31,7 +31,7 @@ export class MultiplesLineas extends TragaMoneda{
           columnas.push(numeroAleatorio2);
           columnas.push(numeroAleatorio3);
           columnas.push(numeroAleatorio4);
-          
+
         if(columnas[numeroAleatorio1] === columnas[numeroAleatorio2] ||
             columnas[numeroAleatorio2]===columnas[numeroAleatorio3]||
             columnas[numeroAleatorio3]===columnas[numeroAleatorio4]){

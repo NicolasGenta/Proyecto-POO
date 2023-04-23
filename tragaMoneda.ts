@@ -1,10 +1,13 @@
 export abstract class TragaMoneda{
 protected nombre: string;
-private credito: number;
+protected cantidad: number;
 protected apuesta: number;
 
 
-constructor(){
+constructor(nombre:string,cantidad:number,apuesta:number){
+    this.nombre = nombre;
+    this.cantidad = cantidad;
+    this.apuesta = apuesta;
 }
 
 public abstract setAgregarCredito(cantidad:number): void

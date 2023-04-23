@@ -20,7 +20,7 @@ var tragaMoneda_1 = require("./tragaMoneda");
 var MultiplesLineas = /** @class */ (function (_super) {
     __extends(MultiplesLineas, _super);
     function MultiplesLineas(nombre, cantidad, apuesta) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, nombre, cantidad, apuesta) || this;
         _this.nombre = nombre;
         _this.cantidad = cantidad;
         _this.apuesta = apuesta;

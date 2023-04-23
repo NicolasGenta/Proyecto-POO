@@ -4,7 +4,7 @@ export class Multiplicador extends TragaMoneda{
     protected cantidad:number;
     protected apuesta: number;
     constructor(nombre:string,cantidad:number,apuesta:number){
-        super()
+        super(nombre,cantidad,apuesta)
         this.nombre =nombre;
         this.cantidad=cantidad;
         this.apuesta=apuesta;

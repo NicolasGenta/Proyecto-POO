@@ -4,7 +4,7 @@ export class Dados implements Idados{
     protected nombre: string;
     protected saldo: number;
     protected apuesta: number;
-    private numeroElegido: Number;
+    protected numeroElegido: Number;
     constructor(nombre:string,saldo:number,apuesta:number,numeroElegido:number){
         this.saldo = saldo;
         this.apuesta = apuesta;
