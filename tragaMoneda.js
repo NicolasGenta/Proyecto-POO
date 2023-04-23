@@ -6,10 +6,6 @@ var TragaMoneda = /** @class */ (function () {
     }
     TragaMoneda.prototype.jugar = function () {
     };
-    TragaMoneda.prototype.iniciar = function () {
-    };
-    TragaMoneda.prototype.provabilidad = function () {
-    };
     return TragaMoneda;
 }());
 exports.TragaMoneda = TragaMoneda;

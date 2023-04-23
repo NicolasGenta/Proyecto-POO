@@ -1,55 +1,52 @@
 import { TragaMoneda } from "./tragaMoneda";
-
 export class MultiplesLineas extends TragaMoneda{
-    private cantLineas: number;
-    constructor(){
+    protected nombre: string;
+    private cantidad:number;
+    public apuesta:number;
+    constructor(nombre:string,cantidad:number,apuesta:number){
         super();
-     
+        this.nombre= nombre;
+        this.cantidad=cantidad;
+        this.apuesta=apuesta;
+    }
+    toString(){
+        return `${this.nombre}`
     }
     public setAgregarCredito(cantidad:number): void{
         cantidad = cantidad;
-}
-public setApuesta(apuesta:number): void{
+    }
+    public setApuesta(apuesta:number): void{
     this.apuesta = apuesta;
-}
-public provabilidad(): void{
-    this.apuesta*0.1;
-    console.log(`la probabilidad de ganar es de ${this.apuesta*0.1}%`);}
-public jugar(): void{
+    }
+    public jugar(): void{
     if(this.cantidad<=0){
         console.log("No tiene sufisiente saldo para jugar");
-        
      }
-     this.cantidad--
-     const numeroAleatorio = Math.floor(Math.random()*10)+1;
+     const numeroAleatorio1 = Math.floor(Math.random()*10)+1;
+     const numeroAleatorio2 = Math.floor(Math.random()*10)+1
+     const numeroAleatorio3= Math.floor(Math.random()*10)+1;
+     const numeroAleatorio4= Math.floor(Math.random()*10)+1
      let columnas: number[] = [];
-     for(let i = 0; i <= 4 ; i++){
-       columnas.push(numeroAleatorio);
-     }
-     for(let i = 0; i <= columnas.length; i++){
-        if(columnas[i-1] === columnas[i+1]){
-            console.log(`ganaste ${this.apuesta*2}`);
-            console.log(`numeros ganadores${columnas.toString}`);
+          columnas.push(numeroAleatorio1);
+          columnas.push(numeroAleatorio2);
+          columnas.push(numeroAleatorio3);
+          columnas.push(numeroAleatorio4);
+          
+        if(columnas[numeroAleatorio1] === columnas[numeroAleatorio2] ||
+            columnas[numeroAleatorio2]===columnas[numeroAleatorio3]||
+            columnas[numeroAleatorio3]===columnas[numeroAleatorio4]){
+           console.log(`ganaste ${this.apuesta*2}`);
+           console.log(`numeros ganadores : ${columnas}`);
+        }
+            else{ console.log(`perdiste esta partida`);
+            console.log(`numeros perdedores: ${columnas}`);
+            }
     }
-      else{ console.log(`perdiste esta partida`);
-      console.log(`numeros perdedores${columnas.toString}`);
-     
-      }
-    }
-    
-     this.jugadaRestante--
-      }
-public iniciar():void{
-    if(this.cantidad<=0){
-        console.log("no tiene suficiente saldo para jugar");
-}
-// this.jugadaRestante=jugar;
-// while(this.jugadaRestante>0){
-//     this.jugar
-//   }
 }
 
 
 
-}
+
+
+
 

@@ -19,49 +19,45 @@ exports.MultiplesLineas = void 0;
 var tragaMoneda_1 = require("./tragaMoneda");
 var MultiplesLineas = /** @class */ (function (_super) {
     __extends(MultiplesLineas, _super);
-    function MultiplesLineas() {
-        return _super.call(this) || this;
+    function MultiplesLineas(nombre, cantidad, apuesta) {
+        var _this = _super.call(this) || this;
+        _this.nombre = nombre;
+        _this.cantidad = cantidad;
+        _this.apuesta = apuesta;
+        return _this;
     }
+    MultiplesLineas.prototype.toString = function () {
+        return "".concat(this.nombre);
+    };
     MultiplesLineas.prototype.setAgregarCredito = function (cantidad) {
         cantidad = cantidad;
     };
     MultiplesLineas.prototype.setApuesta = function (apuesta) {
         this.apuesta = apuesta;
     };
-    MultiplesLineas.prototype.provabilidad = function () {
-        this.apuesta * 0.1;
-        console.log("la probabilidad de ganar es de ".concat(this.apuesta * 0.1, "%"));
-    };
     MultiplesLineas.prototype.jugar = function () {
         if (this.cantidad <= 0) {
             console.log("No tiene sufisiente saldo para jugar");
         }
-        this.cantidad--;
-        var numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+        var numeroAleatorio1 = Math.floor(Math.random() * 10) + 1;
+        var numeroAleatorio2 = Math.floor(Math.random() * 10) + 1;
+        var numeroAleatorio3 = Math.floor(Math.random() * 10) + 1;
+        var numeroAleatorio4 = Math.floor(Math.random() * 10) + 1;
         var columnas = [];
-        for (var i = 0; i <= 4; i++) {
-            columnas.push(numeroAleatorio);
+        columnas.push(numeroAleatorio1);
+        columnas.push(numeroAleatorio2);
+        columnas.push(numeroAleatorio3);
+        columnas.push(numeroAleatorio4);
+        if (columnas[numeroAleatorio1] === columnas[numeroAleatorio2] ||
+            columnas[numeroAleatorio2] === columnas[numeroAleatorio3] ||
+            columnas[numeroAleatorio3] === columnas[numeroAleatorio4]) {
+            console.log("ganaste ".concat(this.apuesta * 2));
+            console.log("numeros ganadores : ".concat(columnas));
         }
-        for (var i = 0; i <= columnas.length; i++) {
-            if (columnas[i - 1] === columnas[i + 1]) {
-                console.log("ganaste ".concat(this.apuesta * 2));
-                console.log("numeros ganadores".concat(columnas.toString));
-            }
-            else {
-                console.log("perdiste esta partida");
-                console.log("numeros perdedores".concat(columnas.toString));
-            }
+        else {
+            console.log("perdiste esta partida");
+            console.log("numeros perdedores: ".concat(columnas));
         }
-        this.jugadaRestante--;
-    };
-    MultiplesLineas.prototype.iniciar = function () {
-        if (this.cantidad <= 0) {
-            console.log("no tiene suficiente saldo para jugar");
-        }
-        // this.jugadaRestante=jugar;
-        // while(this.jugadaRestante>0){
-        //     this.jugar
-        //   }
     };
     return MultiplesLineas;
 }(tragaMoneda_1.TragaMoneda));

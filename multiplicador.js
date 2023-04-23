@@ -19,9 +19,16 @@ exports.Multiplicador = void 0;
 var tragaMoneda_1 = require("./tragaMoneda");
 var Multiplicador = /** @class */ (function (_super) {
     __extends(Multiplicador, _super);
-    function Multiplicador() {
-        return _super.call(this) || this;
+    function Multiplicador(nombre, cantidad, apuesta) {
+        var _this = _super.call(this) || this;
+        _this.nombre = nombre;
+        _this.cantidad = cantidad;
+        _this.apuesta = apuesta;
+        return _this;
     }
+    Multiplicador.prototype.toString = function () {
+        return "".concat(this.nombre);
+    };
     Multiplicador.prototype.setAgregarCredito = function (cantidad) {
         cantidad = cantidad;
     };
