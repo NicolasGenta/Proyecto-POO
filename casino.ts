@@ -19,16 +19,16 @@ export class Casino{
     
     
     }
-    setNombre(nombre:string): void{
+    public setNombre(nombre:string): void{
         this.nombre = nombre;
     }
-    setMultiplesLineas(multiplesLineas:MultiplesLineas): void{
+   public setMultiplesLineas(multiplesLineas:MultiplesLineas): void{
         this.multiplesLineas = multiplesLineas;
     }
-    setMultiplicador(multiplicador:Multiplicador): void {
+    public setMultiplicador(multiplicador:Multiplicador): void {
         this.multiplicador = multiplicador;
     }
-    setRuleta(ruleta:Ruleta): void{
+    public setRuleta(ruleta:Ruleta): void{
         this.ruleta = ruleta;
     }
      public setDados(dados:Dados): void{
